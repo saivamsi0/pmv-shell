@@ -1,0 +1,21 @@
+name: Latest Shemls
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu:21.04
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: add-apt-repository ppa:savoury1/ffmpeg5
+      run: add-apt-repository ppa:savoury1/ffmpeg4 
+      run: apt -qq install -y  ffmpeg  
