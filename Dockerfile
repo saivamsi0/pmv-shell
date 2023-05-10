@@ -1,7 +1,7 @@
 FROM ubuntu:22.04 
  
 WORKDIR /usr/src/app
-SHELL ["/bin/bash", "-c"]
+
 RUN chmod 777 /usr/src/app
  
 ENV DEBIAN_FRONTEND=noninteractive 
